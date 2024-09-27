@@ -1,0 +1,227 @@
+<html>
+
+<head>
+  <title>Final Project: SMS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/index.css">
+  <!-- <link rel="stylesheet" href="/index.js"> -->
+</head>
+
+<body>
+  <script src="/index.js"></script>
+  <header>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" class="svg1" viewBox="0 0 16 16">
+      <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z" />
+      <path
+        d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31" />
+    </svg>
+    <a href="https://www.fcusd.org/" class="schools">District Home</a>
+    <button onclick="schools()" class="schools">Schools</button>
+  </header>
+  <div class="div2">
+    <div class="div3">
+      <img class="img1"
+        src="data:image/png;base64,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">
+      <h2 class="h21">Sutter Middle School</h2>
+      <p class="p1"><i>Learning For All: Whatever it Takes</i></p>
+    </div>
+  </div>
+  <div class="div5">
+    <a href="https://sms.fcusd.org/about" target="_blank">About</a>
+    <a href="https://sms.fcusd.org/academics">Academics</a>
+    <a href="https://sms.fcusd.org/students">Students</a>
+    <a href="https://sms.fcusd.org/parents-families">Parents & Families</a>
+    <a href="https://sms.fcusd.org/culture-climate">Culture & Climate</a>
+    <a href="https://sms.fcusd.org/athletics">Athletics</a>
+    <a href="https://sms.fcusd.org/activities">Activities</a>
+  </div>
+
+  <div class="div1" id="div1">
+    <button type="button" onclick="close1()" class="close">X</button>
+    <hr>
+    <p class="p2"><a href="https://www.fcusd.org/schools/elementary-school">ELEMENTARY SCHOOLS</a></p>
+    <hr>
+    <p class="p2"><a href="https://ace.fcusd.org/">Alder Creek Elementary<a></p>
+    <hr>
+    <p class="p2"><a href="https://bse.fcusd.org/">Blanche Sprentz Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://cse.fcusd.org/">Carl H. Sundahl Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://cge.fcusd.org/">Cordova Gardens Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://cme.fcusd.org/">Cordova Meadows Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://cve.fcusd.org/">Cordova Villa Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://eoe.fcusd.org/">Empire Oaks Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://fhe.fcusd.org/">Folsom Hills Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://gre.fcusd.org/">Gold Ridge Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://mre.fcusd.org/">Mangini Ranch Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://mhe.fcusd.org/">Mather Heights Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://nse.fcusd.org/">Natoma Station Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://nve.fcusd.org/">Navigator Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://oce.fcusd.org/">Oak Chan Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://pjse.fcusd.org/">Peter J. Shields Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://rce.fcusd.org/">Rancho Cordova Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://rre.fcusd.org/">Russell Ranch Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://rsa.fcusd.org/">Riverview STEM Academy</a></p>
+    <hr>
+    <p class="p2"><a href="https://sjge.fcusd.org/">Sandra J. Gallardo Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://tje.fcusd.org/">Theodore Judah Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://wre.fcusd.org/">White Rock Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://wme.fcusd.org/">Williamson Elementary</a></p>
+    <hr>
+    <p class="p2"><a href="https://www.fcusd.org/schools/middle-schools">MIDDLE SCHOOLS</a></p>
+    <hr>
+    <p class="p2"><a href="https://fms.fcusd.org/">Folsom Middle</a></p>
+    <hr>
+    <p class="p2"><a href="https://mms.fcusd.org/">Mills Middle</a></p>
+    <hr>
+    <p class="p2"><a href="https://sms.fcusd.org/">Sutter Middle</a></p>
+    <hr>
+    <p class="p2"><a href="https://mtms.fcusd.org/">W.E Mitchell Middle</a></p>
+    <hr>
+    <p class="p2"><a href="https://www.fcusd.org/schools/high-schools">HIGH SCHOOLS</a></p>
+    <hr>
+    <p class="p2"><a href="https://chs.fcusd.org/">Cordova High</a></p>
+    <hr>
+    <p class="p2"><a href="https://fhs.fcusd.org/">Folsom High</a></p>
+    <hr>
+    <p class="p2"><a href="https://vdlhs.fcusd.org/">Vista Del Lago High</a></p>
+    <hr>
+    <p class="p2"><a href="https://www.fcusd.org/schools/alternative-schools">ALTERNATIVE SCHOOLS</a></p>
+    <hr>
+    <p class="p2"><a href="https://aded.fcusd.org/">Adult Education</a></p>
+    <hr>
+    <p class="p2"><a href="https://fccc.fcusd.org/">Folsom Cordova Community Charter School</a></p>
+    <hr>
+    <p class="p2"><a href="https://flhs.fcusd.org/">Folsom Lake High School</a></p>
+    <hr>
+    <p class="p2"><a href="https://ia.fcusd.org/">Innovations Academy</a></p>
+    <hr>
+    <p class="p2"><a href="https://khs.fcusd.org/">Kinney High School</a></p>
+    <hr>
+    <p class="p2"><a href="https://pcds.fcusd.org/">Prospect Community Day School</a></p>
+    <hr>
+    <p class="p2"><a href="https://whs.fcusd.org/">Walnutwood High School</a></p>
+  </div>
+  <div class="div4">
+    <p class="p3"><a
+        href="https://clever.com/oauth/authorize?channel=clever&client_id=4c63c1cf623dce82caac&confirmed=true&redirect_uri=https%3A%2F%2Fclever.com%2Fin%2Fauth_callback&response_type=code&state=1e1edcaa3ea7cd762f67931a2ad24b4439782e56081fd4210ec3b2893ed9b980&district_id=57744d6fe400550100000591">Clever</a><a
+        href="https://app.peachjar.com/flyers/all/schools/54839"> PeachJar Flyers</a><a
+        href="https://sms.fcusd.org/sms-comprehensive-safety-plan"> SMS Comprehensive Safety Plan</a></p>
+    <i class="bi bi-search" onclick="displaySearchBar()" id="searchBarIcon" ondblclick="blockbar()"></i>
+    <input type="search" placeholder="Search Here" id="ip">
+    <i class="bi bi-cross"></i>
+  </div>
+  <div class="div6"><img
+      src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_5/v1714663999/fcusdorg/nvukke38ndcg5vkpdatj/SMSAdminBldgE_EXT_Q5A05053.jpg">
+  </div>
+
+  <div class="div7"><a href="https://sms.fcusd.org/about/sms-calendar"><svg xmlns="http://www.w3.org/2000/svg"
+        width="50" height="50" fill="currentColor" class="bi bi-calendar2-week" viewBox="0 0 16 16">
+        <path
+          d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z" />
+        <path
+          d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+      </svg>
+      <h3>Calendar</h3>
+    </a>
+    <a href="https://powerschool.fcusd.org/public/home.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-people-fill"
+        viewBox="0 0 16 16">
+        <path
+          d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+      </svg>
+      <h3>Powerschool Portal</h3>
+    </a>
+    <a href="https://www.fcusd.org/departments/attendance-safety/attendance-information">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-buildings"
+        viewBox="0 0 16 16">
+        <path
+          d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022M6 8.694 1 10.36V15h5zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5z" />
+        <path
+          d="M2 11h1v1H2zm2 0h1v1H4zm-2 2h1v1H2zm2 0h1v1H4zm4-4h1v1H8zm2 0h1v1h-1zm-2 2h1v1H8zm2 0h1v1h-1zm2-2h1v1h-1zm0 2h1v1h-1zM8 7h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zM8 5h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zm0-2h1v1h-1z" />
+      </svg>
+      <h3>Attendance</h3>
+    </a>
+    <a href="https://www.fcusd.org/educational-services/tk-12-enrollment">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-house-door"
+        viewBox="0 0 16 16">
+        <path
+          d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z" />
+      </svg>
+      <h3>Enrollment</h3>
+    </a>
+    <a href="https://sms.fcusd.org/food-and-nutrition">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-droplet"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M7.21.8C7.69.295 8 0 8 0q.164.544.371 1.038c.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8m.413 1.021A31 31 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z" />
+        <path fill-rule="evenodd"
+          d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87z" />
+      </svg>
+      <h3>Food and Nutrition</h3>
+    </a>
+    <a href="https://www.fcusd.org/departments/transportation">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-bus-front"
+        viewBox="0 0 16 16">
+        <path
+          d="M5 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-6-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zm1-6c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9s3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44 44 0 0 0 8 4m0-1c-1.837 0-3.353.107-4.448.22a.5.5 0 1 1-.104-.994A44 44 0 0 1 8 2c1.876 0 3.426.109 4.552.226a.5.5 0 1 1-.104.994A43 43 0 0 0 8 3" />
+        <path
+          d="M15 8a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1V2.64c0-1.188-.845-2.232-2.064-2.372A44 44 0 0 0 8 0C5.9 0 4.208.136 3.064.268 1.845.408 1 1.452 1 2.64V4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v3.5c0 .818.393 1.544 1 2v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5V14h6v1.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2c.607-.456 1-1.182 1-2zM8 1c2.056 0 3.71.134 4.822.261.676.078 1.178.66 1.178 1.379v8.86a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5V2.64c0-.72.502-1.301 1.178-1.379A43 43 0 0 1 8 1" />
+      </svg>
+      <h3>Transportation</h3>
+    </a>
+    <a href="https://sms.fcusd.org/wetip">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-lightbulb"
+        viewBox="0 0 16 16">
+        <path
+          d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1" />
+      </svg>
+      <h3>WeTip</h3>
+    </a>
+  </div>
+  <div class="div8">
+    <center>
+      <h1>News & Events</h1>
+    </center>
+    <br>
+<div class="div8_1">
+      <div class="div8a">
+      <img
+        src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1724779686/fcusdorg/lth4azsc17hxyuqfayrx/Week.png">
+      <span>Spirit Week</span>
+    </div>
+    <div class="div8b"><img
+        src="https://resources.finalsite.net/images/f_auto,q_auto/v1724392143/fcusdorg/qbdntrtjmonxmqc4jjxt/quicklinks.jpg">
+      <h3>Quick Links</h3>
+    </div>
+  </div>
+  <br>
+  <center>
+  <div class="div9">
+   <div class="div9a1"> <div class="div9a"></div></div>
+   <div class="div9a2"> <div class="div9a"></div></div>
+   <div class="div9a3"> <div class="div9a"></div></div>
+   <div class="div9a4"> <div class="div9a"></div></div>
+  </div>
+  </div>
+</cneter>
+</body>
+
+</html>
